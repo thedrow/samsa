@@ -60,6 +60,7 @@ setup(
         'docs': ['sphinx'] + tests_require,
         'lint': lint_requires
     },
+    use_2to3=True,
     dependency_links=dependency_links,
     zip_safe=False,
     test_suite='nose.collector',
