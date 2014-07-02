@@ -15,14 +15,17 @@ limitations under the License.
 """
 
 import time
-import unittest2
+try:
+    import unittest2 as unittest
+except ImportError:
+    import unittest as unittest
 
 from samsa.utils.log import get_logger_for_function
 
 
-class TestCase(unittest2.TestCase):
+class TestCase(unittest.TestCase):
     """
-    A :class:`~unittest2.TestCase` subclass that extra useful test methods.
+    A :class:`~unittest.TestCase` subclass that extra useful test methods.
     """
     def assertPassesWithMultipleAttempts(self, fn, attempts, timeout=1,
             backoff=None, logger=None):
